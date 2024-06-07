@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox alignment="BASELINE_LEFT" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.unit8.unit8.Controller">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label fx:id="cityLabel"/>
+
+    <ImageView fx:id="weatherIcon" layoutX="250" layoutY="100" visible="false"/>
+    <Label fx:id="temperatureLabel" layoutX="50" layoutY="100" text="Temperature:" visible="false"/>
+    <Label fx:id="descriptionLabel" layoutX="50" layoutY="130" text="Description:" visible="false"/>
+    <Label fx:id="humidityLabel" layoutX="50" layoutY="160" text="Humidity:" visible="false"/>
+    <Label fx:id="windLabel" layoutX="50" layoutY="190" text="Wind:" visible="false"/>
+
+    <HBox spacing="10">
+        <Label text="Enter the city name:"/>
+        <TextField fx:id="cityInput"/>
+    </HBox>
+    <HBox layoutX="33.0" layoutY="277.0" spacing="10.0">
+        <RadioButton fx:id="metricRadioButton" layoutX="33.0" layoutY="277.0" mnemonicParsing="false"
+                     onAction="#onSelectMetric" text="Metric" selected="true"/>
+        <RadioButton fx:id="imperialRadioButton" layoutX="128.0" layoutY="277.0" mnemonicParsing="false"
+                     onAction="#onSelectImperial" text="Imperial"/>
+    </HBox>
+    <Button fx:id="submitButton" text="Get weather" onAction="#onSubmitButtonClick"/>
+</VBox>
